@@ -26,7 +26,7 @@ void City::Init(v8::Local<v8::Object> exports) {
   tpl->InstanceTemplate()->SetInternalFieldCount(1);
 
   tpl->PrototypeTemplate()->Set(Nan::New("lookupSync").ToLocalChecked(),
-      Nan::New<v8::FunctionTemplate>(lookupSync)->GetFunction());
+     Nan::New<v8::FunctionTemplate>(lookupSync));
 
   constructor.Reset(tpl->GetFunction());
   exports->Set(Nan::New("City").ToLocalChecked(), tpl->GetFunction());
